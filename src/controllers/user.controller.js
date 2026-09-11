@@ -12,7 +12,10 @@ export const login=asyncHandler(async(req,res,next)=>{
   if(!result.success){
     const firstErrorMessage = result.error.message;
     throw new Error(`invalid credentail ${firstErrorMessage}`)
+
+    
   }
+
    
   res.status(200).json({message:'Login successful'})
 })

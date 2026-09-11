@@ -1,22 +1,25 @@
-import dotenv from 'dotenv';
-dotenv.config();
-import express, { urlencoded } from 'express';
-import connectDB from '#db/dbConnection.js';
-import path from "path"
-import userRouter from '#routers/user.router.js'
+import express,{Router} from "express"
+
+const router=Router()
 const app=express()
 
-
-app.use(urlencoded())
-app.use(express.json())
-
-app.use("/profile",express.static(path.join(process.cwd(),"src/assest/profile/")))
-
-app.use('/api/v1/user',userRouter)
-connectDB().then(()=>{
+router.get("/me",(req,res)=>{
+    res.send("Hello from me")
+})
+app.use(
+  "/user",(req,res,next)=>{
+    console.log("Middleware for /user route")
+    next()
+  },router)
+app.get("/",(req,res)=>{
+    res.send("Hello World")
+})
+app.get("/about/:id",(req,res)=>{
+   const data=req.query
+  console.log(data.name)
+  res.send(`About page with id: ${req.params.id}`)
+})
 app.listen(3000,()=>{
-  console.log(`http://localhost:3000`)
+    console.log("Server is running on port 3000")
 })
-}).catch((err)=>{
-  console.error('Error starting server:', err);
-})
+

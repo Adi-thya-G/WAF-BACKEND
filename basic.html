@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input, textarea {
+      display: block;
+      margin-bottom: 10px;
+      border: 1px solid ;
+      font:italic 500 16px arial, sans-serif; 
+      font-variant:small-caps;
+      letter-spacing:4px;
+      text-decoration:underline;
+      color:rgba(220, 220, 220, 1);
+
+
+    }
+    form div {
+      margin-bottom: 15px;
+    }
+    input:focus{
+      border-color: #66afe9;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <form  select="validateEmail()" >
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+    </div>
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+      </div>
+      <button type="submit" id="submit">Submit</button>
+  
+    </form>
+    <p style="position:static;
+left:100px;">
+Hello
+</p>
+
+   <script>
+    let name=document.forms[0].elements[0]
+    document.getElementById("submit").onclick=function(e){
+      e.preventDefault();
+      console.log(name.value);
+    }
+    console.log(name);
+    function validateEmail(){
+      console.log("validateEmail")
+    }
+
+   </script>
+
+</body>
+</html>
