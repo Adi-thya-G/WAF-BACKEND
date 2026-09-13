@@ -19,6 +19,11 @@ app.get("/about/:id",(req,res)=>{
   console.log(data.name)
   res.send(`About page with id: ${req.params.id}`)
 })
+app.get("/about/:id/sbdhsbdhb",(req,res)=>{
+   const data=req.query
+  console.log(data.name)
+  res.send(`About page with id: ${req.params.id}`)
+})
 app.listen(3000,()=>{
     console.log("Server is running on port 3000")
 })
