@@ -1,6 +1,6 @@
 
 import asyncHandler from "#util/asyncHandler.js";
-import {User} from "#models/user.model.js";
+
 
 import { loginSchema } from "#types/user.type.js";
 
