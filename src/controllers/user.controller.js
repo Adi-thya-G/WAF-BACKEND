@@ -1,7 +1,5 @@
 
 import asyncHandler from "#util/asyncHandler.js";
-
-
 import { loginSchema } from "#types/user.type.js";
 
 export const login=asyncHandler(async(req,res,next)=>{
