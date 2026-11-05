@@ -1,7 +1,7 @@
 {
   "defects": [
     { "id": "sqli",   "file": "src/userController.ts", "line": 8, "true_commit": "f1d46bd55c651089e33617e2a061f699b6101cc5", "expected_tools": ["sonarqube","semgrep"] },
-    { "id": "deps",   "file": "package.json",          "line": 6,            "true_commit": "9c34ae175206f4621ee087e0b4cd97f53ee38aa4", "expected_tools": ["trivy"] },
+    { "id": "deps",   "file": "package.json",          "line": 6,            "true_commit": "9c34ae175206f4621ee087e0b4cd97f53ee38aa4", "expected_tools": ["trivy"] }, ,
     { "id": "xss",    "file": "src/render.ts",         "line": 6,            "true_commit": "b11dac3b19f4819283845b2230b93d8fc06b3b05", "expected_tools": ["semgrep","sonarqube"] },
     { "id": "secret", "file": "src/config.ts",         "line": 2,                                                         "true_commit": "31deca43bb3817f8da1a238efe92259a17b0b1d1", "expected_tools": ["gitleaks"] }
   ],

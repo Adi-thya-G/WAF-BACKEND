@@ -7,12 +7,10 @@ DIR="${1:-./bug-repo}"; rm -rf "$DIR"; mkdir -p "$DIR/src/gen"; cd "$DIR"
 git init -q -b main
 c() { GIT_AUTHOR_NAME="$1" GIT_AUTHOR_EMAIL="$1@test.dev" GIT_COMMITTER_NAME="$1" GIT_COMMITTER_EMAIL="$1@test.dev" \
       GIT_AUTHOR_DATE="$2" GIT_COMMITTER_DATE="$2" git commit -q -m "$3"; }
-
 # C0: scaffold (60 harmless files, so a later bulk commit can touch them)
 echo "# bug-repo (test fixture)" > README.md
 for i in $(seq -w 1 60); do echo "export const v$i = $((10#$i));" > "src/gen/file$i.ts"; done
-git add -A; c dev.rao 2026-10-01T10:00:00 "initial scaffold"; git tag c0
-
+git add -A ;   c dev.rao 2026-10-01T10:00:00 "initial scaffold"; git tag c0
 # C1: SQL injection introduced (TRUE introducer of defect "sqli")
 cat > src/db.ts <<'EOF'
 export const db = { query: async (_q: string) => [] as any[] };
