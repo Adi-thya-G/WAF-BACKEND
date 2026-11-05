@@ -16,6 +16,6 @@ router.get("/hello", (req, res) => {
 });
 
 // BUG 3: hard-coded credential (CWE-798), FAKE key. Expect Gitleaks.
-export const STRIPE_KEY = "sk_live_FAKEFAKEFAKEFAKEFAKEFAKE";
+export const API_SECRET = "x7Kq9Zp2LmV4tR8bN3wY6cH1dF5gJ0sA";
 
 export default router;

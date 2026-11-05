@@ -11,7 +11,7 @@
 | SQL injection (CWE-89) | src/userController.ts:8 | `add user lookup endpoint` | SonarQube, Semgrep |
 | Vulnerable deps (lodash 4.17.15, minimist 1.2.5) | package.json | `add lodash and minimist deps` | Trivy |
 | Reflected XSS (CWE-79) | src/render.ts:6 | `render profile html` | Semgrep, SonarQube |
-| Hard-coded FAKE Stripe key (CWE-798) | src/config.ts:2 | `add stripe config` | Gitleaks |
+| Hard-coded FAKE API secret (CWE-798) | src/config.ts:2 | `add api secret config` | Gitleaks |
 
 ## The trap
 

@@ -62,12 +62,12 @@ export default router;
 EOF
 git add -A; c dev.mehta 2026-10-04T10:00:00 "render profile html"; git tag c3
 
-# C4: hard-coded secret (FAKE key; TRUE introducer of defect "secret")
+# C4: hard-coded secret (FAKE secret; TRUE introducer of defect "secret")
 cat > src/config.ts <<'EOF'
 // BUG 3: hard-coded credential (CWE-798). This key is FAKE.
-export const STRIPE_KEY = "sk_live_FAKEFAKEFAKEFAKEFAKEFAKE";
+export const API_SECRET = "x7Kq9Zp2LmV4tR8bN3wY6cH1dF5gJ0sA";
 EOF
-git add -A; c dev.rao 2026-10-05T10:00:00 "add stripe config"; git tag c4
+git add -A; c dev.rao 2026-10-05T10:00:00 "add api secret config"; git tag c4
 
 # C5: NOISE. Prettier-style reformat touching the buggy lines + 60 other files.
 sed -i 's/WHERE id=" + id/WHERE id = " + id/' src/userController.ts
