@@ -2,8 +2,7 @@
 
 `make-test-repo.sh` builds a tiny repo with a KNOWN history so you can check every stage.
 
-    ./make-test-repo.sh ./bug-repo      # then push it to GitHub and let your pipeline scan it
-
+    ./make-test-repo.sh ./bug-repo      # then push it to GitHub and let your pipeline scan i
 ## Planted defects (ground truth in `ground_truth.json`)
 
 | Defect | File | Introduced by | Expected scanners |
