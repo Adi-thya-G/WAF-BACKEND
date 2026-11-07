@@ -4,8 +4,7 @@
 
     ./make-test-repo.sh ./bug-repo      # then push it to GitHub and let your pipeline scan i
 ## Planted defects (ground truth in `ground_truth.json`)
-
-| Defect | File | Introduced by | Expected scanners |
+| Defect | File | Introduced by | Expected scanners |    
 |---|---|---|---|
 | SQL injection (CWE-89) | src/userController.ts:8 | `add user lookup endpoint` | SonarQube, Semgrep |
 | Vulnerable deps (lodash 4.17.15, minimist 1.2.5) | package.json | `add lodash and minimist deps` | Trivy |
