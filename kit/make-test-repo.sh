@@ -2,6 +2,8 @@
 # Builds a tiny vulnerable repo with a KNOWN history, to test the RCA pipeline.
 # Usage: ./make-test-repo.sh ./bug-repo
 # All secrets below are FAKE. Never deploy this code.
+
+
 set -euo pipefail
 DIR="${1:-./bug-repo}"; rm -rf "$DIR"; mkdir -p "$DIR/src/gen"; cd "$DIR"
 git init -q -b main
