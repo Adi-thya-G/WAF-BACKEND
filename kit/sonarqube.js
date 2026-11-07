@@ -5,6 +5,8 @@ function calculateTotal(price, quantity) {
     let unusedValue = 100;
 
     // 2. Use of var instead of let/const
+
+    
     var total = price * quantity;
 
     // 3. Duplicate condition
